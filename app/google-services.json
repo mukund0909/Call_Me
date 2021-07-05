@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "137741586795",
+    "project_id": "call-me-f27a5",
+    "storage_bucket": "call-me-f27a5.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:137741586795:android:bcf079f3a3c6717cbd3c2e",
+        "android_client_info": {
+          "package_name": "com.example.call_me"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "137741586795-ieeannrebudkanjole4u0a9c24igrbpt.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.call_me",
+            "certificate_hash": "0fa1bb376999059e1f43795184ef5689c4996710"
+          }
+        },
+        {
+          "client_id": "137741586795-ld4rjkidcegb6gdd7o8vgchg5gp5feen.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCf2FqSeHnhnMIcgvkEY-po7gocl4SiyYg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "137741586795-ld4rjkidcegb6gdd7o8vgchg5gp5feen.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
