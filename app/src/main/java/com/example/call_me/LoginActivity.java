@@ -29,6 +29,7 @@ public class LoginActivity extends AppCompatActivity {
     Button loginbtn,signupbtn;
     FirebaseAuth auth;
     ProgressDialog dialog;
+    TextView forgot;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -40,6 +41,7 @@ public class LoginActivity extends AppCompatActivity {
         passwordbox=findViewById(R.id.passwordbox);
         loginbtn=findViewById(R.id.loginbtn);
         signupbtn=findViewById(R.id.createbtn);
+        forgot=findViewById(R.id.forgot_pass);
         signupbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -77,5 +79,28 @@ public class LoginActivity extends AppCompatActivity {
                 }
             }
         });
+            forgot.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    String s = emailbox.getText().toString();
+                    if(s.length() == 0){
+                        emailbox.setError("Email is required");
+                    }
+                    else {
+                        dialog.show();
+                        auth.sendPasswordResetEmail(s).addOnCompleteListener(new OnCompleteListener<Void>() {
+                            @Override
+                            public void onComplete(@NonNull @NotNull Task<Void> task) {
+                                dialog.dismiss();
+                                if (task.isSuccessful()) {
+                                    Toast.makeText(LoginActivity.this, "Password Reset mail is sent to the following Email-id", Toast.LENGTH_SHORT).show();
+                                } else {
+                                    Toast.makeText(LoginActivity.this, task.getException().getLocalizedMessage(), Toast.LENGTH_SHORT).show();
+                                }
+                            }
+                        });
+                    }
+                }
+            });
     }
 }
